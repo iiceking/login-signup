@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+/*const mongoose = require('mongoose');
 
-const UserSchema = new mongoose.Schema({
+//const UserSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -17,4 +17,5 @@ const UserSchema = new mongoose.Schema({
 });
 
 const UserModel = mongoose.model("User", UserSchema); // Utilisez une convention de nommage cohérente pour le modèle
-module.exports = UserModel;
+module.exports = UserModel;//
+*/
