@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import './LoginSignup.css';
+import { useNavigate } from 'react-router-dom';
 
 import user_icon from '../Assets/person.png';
 import email_icon from '../Assets/email.png';
 import password_icon from '../Assets/password.png';
 
 const LoginSignup = () => {
+    const navigate = useNavigate();
     const [action, setAction] = useState("Login");
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -14,7 +16,7 @@ const LoginSignup = () => {
 
     const handleSubmit = async () => {
         const endpoint = action === "Login" ? "auth/login" : "auth/signup";
-        const url = `http://localhost:4000/${endpoint}`;
+        const url = `http://localhost:5000/${endpoint}`;
         const data = action === "Login" ? { email, password } : { name, email, password };
 
         try {
@@ -30,6 +32,7 @@ const LoginSignup = () => {
             if (response.ok) {
                 setMessage('Success: ' + result.message); // Affiche le message de succès
                 // Redirection ou autre logique post-connexion
+                navigate('/Calendrier')
             } else {
                 setMessage('Error: ' + result.message); // Affiche le message d'erreur
             }

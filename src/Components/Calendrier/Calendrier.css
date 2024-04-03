@@ -1,0 +1,104 @@
+/* Style de base pour le calendrier, similaire au login */
+.calendar-container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 50px; /* Ajustez selon le besoin */
+    width: 800px; /* ou utilisez % pour une largeur responsive */
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.calendar-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 30px;
+}
+
+.calendar-header h2 {
+    color: #08aeea;
+    font-size: 36px; /* Taille légèrement réduite par rapport au login */
+    font-weight: 700;
+}
+
+.calendar-input-section {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.calendar-input-section h3 {
+    margin: 0 0 10px 0;
+    color: #797979; /* Pour correspondre aux styles de texte du login */
+}
+
+.calendar-input-section input,
+.calendar-input-section select {
+    height: 50px;
+    width: 100%; /* Ajustement pour utiliser toute la largeur disponible */
+    padding: 0 15px;
+    margin: auto;
+    background: #eaeaea; /* Pour correspondre aux champs du login */
+    border-radius: 6px;
+    border: none; /* Supprime la bordure */
+    color: #797979;
+    font-size: 19px;
+}
+
+.calendar-submit-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%; /* Bouton complet */
+    height: 40px;
+    color: #fff;
+    background: #08aeea;
+    border: none;
+    border-radius: 50px;
+    font-size: 19px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* Ajouter un peu de style aux options désactivées pour une meilleure UX */
+.calendar-input-section select option[disabled] {
+    color: #cccccc;
+}
+
+/* Styles pour le message de succès */
+.success-message {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #d4edda; /* Fond vert clair pour le succès */
+    color: #155724; /* Texte vert foncé */
+    border: 1px solid #c3e6cb; /* Bordure verte */
+    border-radius: 0px;
+    text-align: center;
+}
+
+.error-message {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f8d7da; /* Fond rouge clair pour l'erreur */
+    color: #721c24; /* Texte rouge foncé */
+    border: 1px solid #f5c6cb; /* Bordure rouge */
+    border-radius: 6px;
+    text-align: center;
+}
+
+.image-container {
+    /* Pour contrôler la taille de l'image */
+    flex-grow: 1;
+    width: 100%; /* Ajustez selon votre mise en page */
+
+  }
+  
+  .image-container img {
+    width: 100%; /* L'image remplit le conteneur */
+    height: auto; /* Gardez le rapport hauteur/largeur de l'image */
+    border-radius: 10px; /* Coins arrondis si souhaité */
+  }
