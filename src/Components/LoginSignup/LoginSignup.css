@@ -97,3 +97,14 @@
     background: #eaeaea;
     color: #676767;
 }
+
+.message-container {
+    margin-top: 20px; /* Décaler le message vers le bas */
+    padding: 10px;
+    background-color: #f8d7da; /* Fond rouge clair pour les messages d'erreur */
+    color: #861e28; /* Texte rouge foncé pour les messages d'erreur */
+    border: 1px solid #f5c6cb; /* Bordure rouge */
+    border-radius: 0px; /* Coins arrondis */
+    text-align: center; /* Centrer le texte */
+  }
+  

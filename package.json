@@ -8,16 +8,15 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.12.3",
-    "@types/react": "^18.2.74",
-    "@types/react-dom": "^18.2.23",
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "mongoose": "^8.2.4",
     "react": "^18.2.0",
+    "react-calendar": "^4.8.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1",
-    "typescript": "^5.4.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -43,5 +42,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@types/react": "^18.2.74",
+    "@types/react-dom": "^18.2.23",
+    "typescript": "^5.4.3"
   }
 }

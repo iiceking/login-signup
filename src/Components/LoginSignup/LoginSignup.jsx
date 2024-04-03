@@ -6,16 +6,15 @@ import email_icon from '../Assets/email.png';
 import password_icon from '../Assets/password.png';
 
 const LoginSignup = () => {
-    const [action, setAction] = useState("Login"); // Défaut sur "Login"
+    const [action, setAction] = useState("Login");
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [message, setMessage] = useState(""); // État pour stocker le message de retour
 
     const handleSubmit = async () => {
-        // Déterminer le endpoint basé sur l'action
         const endpoint = action === "Login" ? "auth/login" : "auth/signup";
         const url = `http://localhost:4000/${endpoint}`;
-        // Préparer les données à envoyer. Pour "Login", "name" n'est pas nécessaire
         const data = action === "Login" ? { email, password } : { name, email, password };
 
         try {
@@ -29,13 +28,13 @@ const LoginSignup = () => {
 
             const result = await response.json();
             if (response.ok) {
-                console.log('Success:', result);
-                // Ici, vous pourriez rediriger l'utilisateur ou gérer l'état de la session
+                setMessage('Success: ' + result.message); // Affiche le message de succès
+                // Redirection ou autre logique post-connexion
             } else {
-                console.error('Error:', result.message);
+                setMessage('Error: ' + result.message); // Affiche le message d'erreur
             }
         } catch (error) {
-            console.error('Error:', error);
+            setMessage('Error: ' + error.toString()); // Gestion des erreurs de requête ou réseau
         }
     };
 
@@ -65,6 +64,7 @@ const LoginSignup = () => {
                 <div className={action === "Sign Up" ? "submit gray" : "submit"} onClick={() => setAction("Login")}>Login</div>
                 <div className="submit" onClick={handleSubmit}>Submit</div>
             </div>
+            {message && <div className="message-container">{message}</div>} {/* Affichage du message */}
         </div>
     );
 };
